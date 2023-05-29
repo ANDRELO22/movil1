@@ -1,34 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Song List
+      Incio
     </ion-title>
-    <ion-button slot="end" routerLink="/form-song">
-      <ion-icon slot="icon-only" name="add"></ion-icon>
-    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Song</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card color="light" routerLink="/song/list">
+    <ion-card-header>
+      <ion-card-title>  <strong>Canciones</strong> </ion-card-title>
+      <ion-card-subtitle>Aquí podrás ver tus canciones y ejecutar acciones sobre ellas.</ion-card-subtitle>
+    </ion-card-header>
 
-  <ion-grid [fixed]="true">
-
-    <ion-card *ngFor="let song of this.songData$ | async" routerLink="/song-detail/{{song.id}}">
-      <ion-card-header>
-        {{song.songName}}
-      </ion-card-header>
+    <ion-card-content>
+      ¡Comenzemos!
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card color="light" routerLink="/artist/list">
+    <ion-card-header>
+      <ion-card-title>  <strong>Artistas</strong> </ion-card-title>
+      <ion-card-subtitle>Aquí podrás ver todos los artistas</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  
+  <ion-card color="light" routerLink="/recording/list">
+    <ion-card-header>
+      <ion-card-title>  <strong>Recordings</strong> </ion-card-title>
+      <ion-card-subtitle>Aquí podrás ver tus canciones y ejecutar acciones sobre ellas.</ion-card-subtitle>
+      
       <ion-card-content>
-        Artist Name: {{song.artistName}}
+        ¡Comenzemos!
       </ion-card-content>
-    </ion-card>
-
-  </ion-grid>
-
-
-
+    </ion-card-header>
+  </ion-card>
 </ion-content>
